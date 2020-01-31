@@ -1,19 +1,25 @@
 #lang at-exp racket
 
-(require "./util.rkt")
+(require "./util.rkt"
+         mc-social-media/memes/main)
 
 (define posts
   (list
     (post
-      @~a{A classroom is a place of discovery for a curious child.}
-
-      "https://raw.githubusercontent.com/thoughtstem/stock-photos/master/facebookphotos/19.JPG"
+      @~a{We need more Picard memes in the world.}
+      (picard-wtf:why-not-more-memes)
       (moment 2020 2 12 
               13 00))
     
     (post
-      @~a{A special teacher is remembered for a lifetime.}
-      "https://raw.githubusercontent.com/thoughtstem/stock-photos/master/facebookphotos/21.jpeg"
+      @~a{Best feeling ever.}
+      (picard-happy:when-my-code-runs)
+      (moment 2020 2 13 
+              13 00))
+
+    (post
+      @~a{Not again!!!}
+      (picard-facepalm:when-students-switch-languages)
       (moment 2020 2 13 
               13 00))
     ))
