@@ -2,6 +2,7 @@
 (define collection "mc-social-media")
 (define deps '("base"
                "gregor"
+	       "aws"
                "https://github.com/thoughtstem/define-assets-from.git"
                ))
 (define build-deps '("scribble-lib" "racket-doc" "rackunit-lib"))

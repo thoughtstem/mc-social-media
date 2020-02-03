@@ -7,22 +7,27 @@
   (list
     (post
       @~a{We need more Picard memes in the world.}
-      (picard-wtf:why-not-more-memes)
+      (upload-to-bucket 
+	(picard-wtf:why-not-more-memes)
+	"picard-wtf-why-not-more-memes")
       (moment 2020 2 12 
               13 00))
     
     (post
       @~a{Best feeling ever.}
-      (picard-happy:when-my-code-runs)
+      (upload-to-bucket
+	(picard-happy:when-my-code-runs)
+	"picard-happy-when-my-code-runs")
       (moment 2020 2 13 
               13 00))
 
     (post
       @~a{Not again!!!}
-      (picard-facepalm:when-students-switch-languages)
+      (upload-to-bucket
+	(picard-facepalm:when-students-switch-languages)
+	"picard-facepalm-when-students-switch-languages")
       (moment 2020 2 13 
-              13 00))
-    ))
+              13 00))))
 
 
 (define test.csv
