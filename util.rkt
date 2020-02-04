@@ -11,9 +11,9 @@
 
 (require 
   aws/s3
-  (only-in 2htdp/image save-image)
-  "./aws_keys.rkt")
+  (only-in 2htdp/image save-image))
 
+(dynamic-require "./aws_keys.rkt" #f)
 
 (struct post (text img-url time) #:transparent)
 
