@@ -4,6 +4,7 @@
                "gregor"
 	       "aws"
                "https://github.com/thoughtstem/define-assets-from.git"
+               "https://github.com/thoughtstem/metacoders-dot-org.git?path=metacoders-dot-org-lib"
                ))
 (define build-deps '("scribble-lib" "racket-doc" "rackunit-lib"))
 (define scribblings '(("scribblings/mc-social-media.scrbl" ())))
