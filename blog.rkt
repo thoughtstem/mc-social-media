@@ -18,26 +18,17 @@
 	    #:tagline "The future will be written with code"
 	    #:percent-height "60vh"
 	    ;#:image-path (picsum 500 300) ;Throws some kind of error.  mc-jumbotron-header needs some docs... 
-	    #:alt-tag "Blogs")
+	   ; #:alt-tag "Blogs"
+            
+            )
 	  (container class: "p-5"
 		     (h1 "Blog")
 		     (blog-posts)))))
 
 (define (blog-posts)
+  (local-require (prefix-in soft-skills: "./blog/soft-skills.rkt"))
   (list
-    (blog-post "First"
-	       @paras{
-                 This is the first post!
-
-		 More coming soon!
-	       })))
-
-
-(define (blog-post title content)
-  (card (card-header title)
-    (card-body
-      (card-text
-	content))))
+    (soft-skills:post)))
 
 (module+ main
   (render 
