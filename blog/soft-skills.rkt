@@ -1,6 +1,6 @@
 #lang at-exp racket
 
-(provide post)
+(provide post author title text)
 
 (require mc-social-media/blog/util)
 
@@ -11,9 +11,7 @@
   "The Soft Side of Coding: Critical Soft Skills Learned from Coding")
 
 (define (post)
-  (blog-post (title)
-             (author)
-             (text)))
+  (blog-post (title) (author) (text)))
 
 (define (text)
   @paras{
@@ -49,5 +47,6 @@
 
   Before I wrap up, I wanted to reference an infographic from the @a[href: "https://www.shrm.org/resourcesandtools/hr-topics/employee-relations/pages/employers-say-students-arent-learning-soft-skills-in-college.aspx"]{Society for Human Resources Management study}. Here, you see employers are noticing that college graduates lack soft skills. As parents and educators, we have a great opportunity to emphasize the development of soft-skills as we teach hard skills.
 
-  @img[src: "https://github.com/thoughtstem/mc-social-media/raw/master/blog/soft-skills/images/infographic.png"]
+  @img[width: "100%" 
+       src: "https://github.com/thoughtstem/mc-social-media/raw/master/blog/soft-skills/images/infographic.png"]
   } )
