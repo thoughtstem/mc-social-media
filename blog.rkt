@@ -1,6 +1,6 @@
 #lang at-exp racket
 
-(provide blog)
+(provide blog blog-posts mc-social-media->frog)
 
 (require website/bootstrap
 	 metacoders-dot-org-lib)
@@ -29,6 +29,24 @@
   (local-require (prefix-in soft-skills: "./blog/soft-skills.rkt"))
   (list
     (soft-skills:post)))
+
+;Hopefully temporary hacks to pipe content to thoughtstem.com/blog
+(define (mc-social-media->frog)
+  (local-require (prefix-in soft-skills: "./blog/soft-skills.rkt"))
+  (frog-post (soft-skills:title)
+             (soft-skills:author) 
+             (soft-skills:text)))
+
+(define (frog-post title author text)
+  @article{
+    @header{
+      @h2{@a[href: "https://metacoders.org/blog"]{@title}}
+      @p[class: "date-and-time"]{}
+      @p[class: "authors"]{By: @author}
+    }
+    @p{@(first text)}
+    @a[href: "https://metacoders.org/blog"]{More...} 
+  })
 
 (module+ main
   (render 
