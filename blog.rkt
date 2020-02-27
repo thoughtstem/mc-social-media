@@ -23,15 +23,16 @@
             )
 	  (container class: "p-5"
 		     (h1 "Blog")
-		     (blog-posts)))))
+		     (add-between
+		       (blog-posts)
+		       (hr))))))
 
 (define (blog-posts)
   (local-require (prefix-in soft-skills: "./blog/soft-skills.rkt"))
   (local-require (prefix-in language-learning: "./blog/language-learning.rkt"))
   (list
     (language-learning:post)
-    (soft-skills:post)
-    ))
+    (soft-skills:post)))
 
 ;Hopefully temporary hacks to pipe content to thoughtstem.com/blog
 (define (mc-social-media->frog)
