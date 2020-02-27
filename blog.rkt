@@ -27,15 +27,25 @@
 
 (define (blog-posts)
   (local-require (prefix-in soft-skills: "./blog/soft-skills.rkt"))
+  (local-require (prefix-in language-learning: "./blog/language-learning.rkt"))
   (list
-    (soft-skills:post)))
+    (language-learning:post)
+    (soft-skills:post)
+    ))
 
 ;Hopefully temporary hacks to pipe content to thoughtstem.com/blog
 (define (mc-social-media->frog)
   (local-require (prefix-in soft-skills: "./blog/soft-skills.rkt"))
-  (frog-post (soft-skills:title)
-             (soft-skills:author) 
-             (soft-skills:text)))
+  (local-require (prefix-in language-learning: "./blog/language-learning.rkt"))
+
+  (list
+    (frog-post (language-learning:title)
+	       (language-learning:author) 
+	       (language-learning:text))
+
+    (frog-post (soft-skills:title)
+	       (soft-skills:author) 
+	       (soft-skills:text))))
 
 (define (frog-post title author text)
   @article{

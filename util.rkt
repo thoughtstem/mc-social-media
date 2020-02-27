@@ -55,3 +55,7 @@
   (delete-file name.png)
 
   (format "https://s3-us-west-1.amazonaws.com/mc-social-media/~a" name.png))
+
+
+
+
